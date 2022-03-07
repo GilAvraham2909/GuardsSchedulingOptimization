@@ -1,0 +1,2 @@
+cd guards-scheduling-problem
+python main.py
