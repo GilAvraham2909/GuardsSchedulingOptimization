@@ -1,6 +1,6 @@
 import random
 
-import IntegerPrograming
+import IntegerProgramming
 import function as f
 import genetic
 import new_starts_hill_climbing
@@ -161,7 +161,7 @@ if __name__ == '__main__':
                 else:
                     num_shift = insert_shift_num(guard)
         print('Choose a technique for scheduling:')
-        print('1 - Integer Programing')
+        print('1 - Integer Programming')
         print('2 - Hill Climb with n random start')
         print('3 - Genetic algorithm')
         print('0 - Quit')
