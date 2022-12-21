@@ -17,7 +17,7 @@ HARD_CONSTRAINT_PENALTY = 10  # the penalty factor for a hard-constraint violati
 # Genetic Algorithm constants:
 POPULATION_SIZE = 300
 P_CROSSOVER = 0.9  # probability for crossover
-P_MUTATION = 0.1   # probability for mutating an individual
+P_MUTATION = 0.1  # probability for mutating an individual
 MAX_GENERATIONS = 200
 HALL_OF_FAME_SIZE = 30
 
@@ -27,9 +27,10 @@ random.seed(RANDOM_SEED)
 
 toolbox = base.Toolbox()
 
+
 ####elitism
 def eaSimpleWithElitism(population, toolbox, cxpb, mutpb, ngen, stats=None,
-             halloffame=None, verbose=__debug__):
+                        halloffame=None, verbose=__debug__):
     """This algorithm is similar to DEAP eaSimple() algorithm, with the modification that
     halloffame is used to implement an elitism mechanism. The individuals contained in the
     halloffame are directly injected into the next generation and are not subject to the
@@ -95,17 +96,20 @@ def eaSimpleWithElitism(population, toolbox, cxpb, mutpb, ngen, stats=None,
     out.close()
     return population, logbook
 
+
 # define a single objective, maximizing fitness strategy:
 creator.create("FitnessMin", base.Fitness, weights=(-1.0,))
 
 # create the Individual class based on list:
 creator.create("Individual", list, fitness=creator.FitnessMin)
 
+
 #### Genetic Algorithm flow:
 def main(guard, shift_requests, num_days, num_shifts, num_shift, gen):
     MAX_GENERATIONS = gen
     # create the guard scheduling problem instance to be used:
-    nsp = guard_class.GuardSchedulingProblem(HARD_CONSTRAINT_PENALTY, guard, shift_requests, num_days, num_shifts, num_shift)
+    nsp = guard_class.GuardSchedulingProblem(HARD_CONSTRAINT_PENALTY, guard, shift_requests, num_days, num_shifts,
+                                             num_shift)
 
     # create an operator that randomly returns 0 or 1:
     toolbox.register("zeroOrOne", random.randint, 0, 1)
@@ -159,6 +163,7 @@ def main(guard, shift_requests, num_days, num_shifts, num_shift, gen):
     plt.ylabel('Min / Average Fitness')
     plt.title('Min and Average fitness over Generations')
     plt.show()
+
 
 if __name__ == "__main__":
     main()

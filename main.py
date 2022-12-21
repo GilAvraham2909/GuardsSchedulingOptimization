@@ -170,7 +170,7 @@ if __name__ == '__main__':
         if option == 1:
             print("")
             print("Maximize shifts Result:")
-            IntegerPrograming.main(guard, shift_requests, num_days, num_shifts, num_shift)
+            IntegerProgramming.main(guard, shift_requests, num_days, num_shifts, num_shift)
             # f.print_result(solve, shift, shift_requests, guard, num_days, num_shifts, "", status)
         # option 2
         elif option == 2:

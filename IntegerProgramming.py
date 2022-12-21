@@ -1,8 +1,8 @@
 from ortools.linear_solver import pywraplp
 import random
 
-
 number_of_guards = 30
+
 
 def generate_guard_shifts():  # this function generate a guard list
     guard_list = []
@@ -49,7 +49,6 @@ def check_match(given, output):
                     count_correct += 1
     print("number of happiness is: " + str((count_correct / (21 * number_of_guards)) * 100) + "%")
     print("correct of all: " + str(count_correct) + " / " + str(number_of_guards * 21))
-
 
 
 def give_shifts():
@@ -161,7 +160,6 @@ def main(num_guards, shift_requests, num_days, num_shifts, max_shift):
             if next <= num_days - 1:
                 solver.Add(prob_list[n][d][2] + prob_list[n][next][0] <= 1)
 
-
     # now define the objective
     objective = []
     for guard in all_guards:
@@ -190,8 +188,8 @@ def main(num_guards, shift_requests, num_days, num_shifts, max_shift):
                         else:
                             print('Guard', n, 'works shift', s)
             print("")
-        print('Total shifts = ' + str(solver.Objective().Value()) + " / " + str(sum(max_shift)) + " succeed to maximize")
+        print(
+            'Total shifts = ' + str(solver.Objective().Value()) + " / " + str(sum(max_shift)) + " succeed to maximize")
         print("")
     else:
         print("there is no solution!")
-

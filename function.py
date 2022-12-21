@@ -1,5 +1,6 @@
 import random
 
+
 def input_requerst(shift_requests):
     s = []
     guard_len = len(shift_requests)
@@ -17,17 +18,18 @@ def input_requerst(shift_requests):
         s.append(row)
     return s
 
+
 def random_100():
     shift = []
     per_shift = []
     for i in range(100000):
-        per_shift.append(random.randint(3,5))
+        per_shift.append(random.randint(3, 5))
         c = ""
         for j in range(7):
             for k in range(3):
-                c += str(random.randint(0,1))
+                c += str(random.randint(0, 1))
             if j < 6:
-                c+= " "
+                c += " "
         shift.append(c)
     print(per_shift)
     print(shift)
