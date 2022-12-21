@@ -1,7 +1,7 @@
 import random
 
 
-def input_requerst(shift_requests):
+def input_request(shift_requests):
     s = []
     guard_len = len(shift_requests)
     len_str = len(shift_requests[0])

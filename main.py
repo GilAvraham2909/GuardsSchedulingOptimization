@@ -134,7 +134,7 @@ if __name__ == '__main__':
                     print("please insert shift to guard number: " + str(i))
                     shift = input()
                     s.append(shift)
-                shift_requests = f.input_requerst(s)
+                shift_requests = f.input_request(s)
                 print('would you like to create random shift percentage?')
                 print('1 - no')
                 print('2 - yes')
@@ -144,14 +144,14 @@ if __name__ == '__main__':
                 else:
                     num_shift = insert_shift_num(guard)
             elif option == 2:
-                shift_requests = f.input_requerst(shift)  # create static
+                shift_requests = f.input_request(shift)  # create static
                 guard = guards
             elif option == 0:
                 exit(0)
             else:
                 print("write number of guard: ")
                 guard = int(input())
-                shift_requests = f.input_requerst(generate_guard_shifts(guard))  # create random
+                shift_requests = f.input_request(generate_guard_shifts(guard))  # create random
                 print('would you like to create random shift percentage?')
                 print('1 - no')
                 print('2 - yes')
